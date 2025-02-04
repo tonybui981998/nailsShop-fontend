@@ -1,0 +1,44 @@
+.ReferStaff {
+  //border: 1px solid red;
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  height: fit-content;
+  justify-content: center;
+  .staffmain {
+    border: 1px solid rgb(229, 221, 221);
+    width: 250px;
+    height: fit-content;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(243, 238, 238);
+    }
+
+    img {
+      margin-top: 25px;
+      width: 120px;
+      height: 100px;
+      border-radius: 100%;
+    }
+    .staff-name {
+      margin-top: 25px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .staff-role {
+      margin-top: 10px;
+      color: rgb(120, 109, 109);
+      margin-bottom: 40px;
+    }
+  }
+}

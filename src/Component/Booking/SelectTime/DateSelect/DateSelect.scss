@@ -1,0 +1,49 @@
+.dateSelect {
+  //border: 1px solid red;
+  display: flex;
+  width: 60%;
+  margin: auto;
+  justify-content: space-between;
+  margin-top: 30px;
+  .leftside {
+    border: 1px solid rgb(195, 189, 189);
+    display: flex;
+    border-radius: 50px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgb(239, 232, 232);
+    }
+    img {
+      margin: 10px 0 10px 10px;
+      width: 80px;
+      border-radius: 60px;
+    }
+    .name {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .icon {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      margin-right: 10px;
+      color: rgb(180, 171, 171);
+    }
+  }
+  .middleside {
+    //border: 1px solid red;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  .react-datepicker__view-calendar-icon input {
+    padding: 10px 8px 10px 30px !important;
+    font-size: 20px !important;
+    font-weight: 600px !important;
+    padding-right: 15px !important;
+    cursor: pointer !important;
+  }
+}

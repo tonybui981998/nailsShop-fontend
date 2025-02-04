@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+.BookingSelect {
+  .header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgb(214, 206, 206);
+    align-items: center;
+    margin: auto;
+    .header-icon {
+      font-size: 28px;
+      margin-left: 35px;
+      color: black;
+    }
+    div {
+      font-size: 28px;
+      font-weight: 550;
+    }
+  }
+}
