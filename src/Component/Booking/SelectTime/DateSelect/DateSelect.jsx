@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./DateSelect.scss";
 import { FaExchangeAlt } from "react-icons/fa";
+import ChangeStaffModel from "../ChangeStaffModel/ChangeStaffModel";
 
 const DateSelect = () => {
   const { selectedStaff, startDate, setStartDate } = useBookingLogic();
@@ -26,6 +27,7 @@ const DateSelect = () => {
           showIcon
         />
       </div>
+      <ChangeStaffModel />
     </div>
   );
 };
