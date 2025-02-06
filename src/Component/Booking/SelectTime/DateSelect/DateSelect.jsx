@@ -8,27 +8,43 @@ import ChangeStaffModel from "../ChangeStaffModel/ChangeStaffModel";
 
 const DateSelect = () => {
   const { selectedStaff, startDate, setStartDate } = useBookingLogic();
-  console.log("check", startDate);
+  const [disPlayModel, setDisPlayModel] = useState(false);
+
+  // open model
+  const openModel = () => {
+    setDisPlayModel(!disPlayModel);
+  };
+  // close model
+  const closeModel = () => {
+    setDisPlayModel(false);
+  };
 
   return (
-    <div className="dateSelect">
-      <div className="leftside">
-        <img src={selectedStaff.image} />
-        <div className="name">{selectedStaff.name}</div>
-        <div className="icon">
-          <FaExchangeAlt />
+    <>
+      <div className="dateSelect">
+        <div className="leftside" onClick={() => openModel()}>
+          <img src={selectedStaff.image} />
+          <div className="name">{selectedStaff.name}</div>
+          <div className="icon">
+            <FaExchangeAlt />
+          </div>
+        </div>
+        <div className="middleside" onClick={() => closeModel()}>
+          <DatePicker
+            toggleCalendarOnIconClick
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            showIcon
+          />
         </div>
       </div>
-      <div className="middleside">
-        <DatePicker
-          toggleCalendarOnIconClick
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-          showIcon
-        />
-      </div>
-      <ChangeStaffModel />
-    </div>
+
+      {disPlayModel === true ? (
+        <ChangeStaffModel closeModel={closeModel} />
+      ) : (
+        <div></div>
+      )}
+    </>
   );
 };
 

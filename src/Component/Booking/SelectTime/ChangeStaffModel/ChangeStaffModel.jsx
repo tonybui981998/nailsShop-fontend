@@ -1,39 +1,30 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import Modal from "react-modal";
+import React from "react";
+import useBookingLogic from "../../BookingLogic/useBookingLogic";
+import "./ChangeStaffModel.scss";
 
-const ChangeStaffModel = () => {
-  const [modalIsOpen, setIsOpen] = useState(true);
-  const customStyles = {
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
+const ChangeStaffModel = ({ closeModel }) => {
+  const { getstaff, selectedStaff, handleSelectStaff } = useBookingLogic();
+  const closeModelafterSelect = (item) => {
+    handleSelectStaff(item);
+    closeModel();
   };
 
   return (
-    <div>
-      <Modal
-        isOpen={modalIsOpen}
-        //  onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <h2>Hello</h2>
-        <button /*onClick={closeModal}*/>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
-      </Modal>
+    <div className="changeStaffModel">
+      {getstaff &&
+        getstaff.map((item, index) => {
+          return (
+            <div
+              className="main-model"
+              key={index}
+              onClick={() => closeModelafterSelect(item)}
+            >
+              <img src={item.image} />
+              <div className="model-name">{item.name}</div>
+              <div className="model-role">{item.role}</div>
+            </div>
+          );
+        })}
     </div>
   );
 };
