@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import "./DateSelect.scss";
 import { FaExchangeAlt } from "react-icons/fa";
 import ChangeStaffModel from "../ChangeStaffModel/ChangeStaffModel";
+import SelectTimeAuto from "../SelectTimes/SelectTimeAuto";
 
 const DateSelect = () => {
   const { selectedStaff, startDate, setStartDate } = useBookingLogic();
@@ -44,6 +45,7 @@ const DateSelect = () => {
       ) : (
         <div></div>
       )}
+      <SelectTimeAuto />
     </>
   );
 };
