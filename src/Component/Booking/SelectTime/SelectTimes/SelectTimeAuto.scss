@@ -1,0 +1,49 @@
+.SelectTimeAuto {
+  margin-top: 20px;
+  width: 70%;
+  margin: auto;
+  .line {
+    width: 100%;
+    margin-top: 30px;
+    border: 1px solid rgb(186, 174, 174);
+  }
+  .selectTIme-icon {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    span {
+      margin-left: 15px;
+    }
+  }
+  .timeAuto {
+    display: flex;
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: auto;
+    height: fit-content;
+    cursor: grab;
+    .auto-main {
+      text-align: center;
+      margin: 20px 15px 20px 15px;
+
+      .auto-date {
+        border: 1px solid rgb(37, 34, 34);
+        border-radius: 80px;
+        height: 60px;
+        font-size: 22px;
+        font-weight: 550;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65px;
+      }
+      .highlight {
+        background-color: blue;
+        color: white;
+      }
+      .auto-day {
+        margin-top: 10px;
+      }
+    }
+  }
+}

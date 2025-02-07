@@ -22,6 +22,7 @@ const useSelectTimeLogic = () => {
   return {
     startDate,
     getDateselect,
+    getDate,
   };
 };
 

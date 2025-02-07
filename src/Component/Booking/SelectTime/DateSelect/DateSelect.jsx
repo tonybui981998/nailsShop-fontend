@@ -45,7 +45,7 @@ const DateSelect = () => {
       ) : (
         <div></div>
       )}
-      <SelectTimeAuto />
+      <SelectTimeAuto startDate={startDate} selectedStaff={selectedStaff} />
     </>
   );
 };

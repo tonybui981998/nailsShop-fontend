@@ -3,7 +3,7 @@ import useBookingLogic from "../../BookingLogic/useBookingLogic";
 import "./ChangeStaffModel.scss";
 
 const ChangeStaffModel = ({ closeModel }) => {
-  const { getstaff, selectedStaff, handleSelectStaff } = useBookingLogic();
+  const { getstaff, handleSelectStaff } = useBookingLogic();
   const closeModelafterSelect = (item) => {
     handleSelectStaff(item);
     closeModel();

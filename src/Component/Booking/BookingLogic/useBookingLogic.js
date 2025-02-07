@@ -31,7 +31,6 @@ const useBookingLogic = () => {
   const getopenModel = () => {
     setOpenModel(true);
   };
-  // open changestaff model
 
   return {
     openMenu,
