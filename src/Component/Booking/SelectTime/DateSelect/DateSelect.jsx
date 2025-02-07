@@ -6,9 +6,11 @@ import "./DateSelect.scss";
 import { FaExchangeAlt } from "react-icons/fa";
 import ChangeStaffModel from "../ChangeStaffModel/ChangeStaffModel";
 import SelectTimeAuto from "../SelectTimes/SelectTimeAuto";
+import useSelectTimeLogic from "../SelectTimeLogic/useSelectTimeLogic";
 
 const DateSelect = () => {
-  const { selectedStaff, startDate, setStartDate } = useBookingLogic();
+  const { selectedStaff } = useBookingLogic();
+  const { startDate, handleSelectStartDate } = useSelectTimeLogic();
   const [disPlayModel, setDisPlayModel] = useState(false);
 
   // open model
@@ -34,7 +36,7 @@ const DateSelect = () => {
           <DatePicker
             toggleCalendarOnIconClick
             selected={startDate}
-            onChange={(date) => setStartDate(date)}
+            onChange={(date) => handleSelectStartDate(date)}
             showIcon
           />
         </div>

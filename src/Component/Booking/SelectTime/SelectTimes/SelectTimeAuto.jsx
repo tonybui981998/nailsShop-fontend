@@ -4,9 +4,10 @@ import { GrNext } from "react-icons/gr";
 import useSelectTimeLogic from "../SelectTimeLogic/useSelectTimeLogic";
 import "./SelectTimeAuto.scss";
 
-const SelectTimeAuto = ({ startDate, selectedStaff }) => {
+const SelectTimeAuto = ({ startDate }) => {
   const containerRef = useRef();
-  const { getDateselect } = useSelectTimeLogic();
+  const { getDateselect, handleSelectStartDate } = useSelectTimeLogic();
+
   const [getFormatStartDate, setGetFormatStartDate] = useState("");
   useEffect(() => {
     const convertStartDate = () => {
@@ -24,22 +25,24 @@ const SelectTimeAuto = ({ startDate, selectedStaff }) => {
       }
     }
   }, [getFormatStartDate]);
-  console.log(getDateselect);
+  console.log("check date", getDateselect);
+  console.log("check form", getFormatStartDate);
+  console.log("check start date", startDate);
   return (
     <div className="SelectTimeAuto">
       <div className="line"></div>
-      <div className="selectTIme-icon">
-        <MdArrowBackIos />{" "}
-        <span>
-          <GrNext />
-        </span>
-      </div>
+
       <div className="timeAuto" ref={containerRef}>
         {getDateselect &&
           getDateselect.map((item, index) => {
             const isSelected = item.day.toString() === getFormatStartDate;
+
             return (
-              <div className="auto-main " key={index}>
+              <div
+                onClick={() => handleSelectStartDate(item.fullDate)}
+                className="auto-main "
+                key={index}
+              >
                 <div
                   className={`auto-date ${
                     item.day === getFormatStartDate ? "highlight" : ""

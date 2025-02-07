@@ -5,6 +5,7 @@ const initialState = {
   selectItem: [],
   nailStaffs: nailStaff,
   selectStaffService: null,
+  startDate: new Date(),
 };
 
 export const counterSlice = createSlice({
@@ -22,6 +23,10 @@ export const counterSlice = createSlice({
     },
     handleSelectStaff: (state, action) => {
       state.selectStaffService = action.payload;
+    },
+    // get start date
+    handleSelectStartDate: (state, action) => {
+      state.startDate = action.payload;
     },
   },
 });
@@ -46,6 +51,7 @@ export const selectStaff = (state) => {
 };
 
 // Action creators are generated for each case reducer function
-export const { handleClickItem, handleSelectStaff } = counterSlice.actions;
+export const { handleClickItem, handleSelectStaff, handleSelectStartDate } =
+  counterSlice.actions;
 
 export default counterSlice.reducer;

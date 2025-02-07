@@ -11,7 +11,6 @@ import { getTotalPrice } from "../../Redux/counterSlice";
 const useBookingLogic = () => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [openModel, setOpenModel] = useState(false);
-  const [startDate, setStartDate] = useState(new Date());
 
   // from redux
   const dispatch = useDispatch();
@@ -43,8 +42,6 @@ const useBookingLogic = () => {
     openModel,
     handleSelectStaff: (staff) => dispatch(handleSelectStaff(staff)),
     selectedStaff,
-    startDate,
-    setStartDate,
   };
 };
 
