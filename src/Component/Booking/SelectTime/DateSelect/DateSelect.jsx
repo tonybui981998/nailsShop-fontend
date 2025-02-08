@@ -7,6 +7,7 @@ import { FaExchangeAlt } from "react-icons/fa";
 import ChangeStaffModel from "../ChangeStaffModel/ChangeStaffModel";
 import SelectTimeAuto from "../SelectTimes/SelectTimeAuto";
 import useSelectTimeLogic from "../SelectTimeLogic/useSelectTimeLogic";
+import StaffTimeAvailable from "../StaffTimeAvailable/StaffTimeAvailable";
 
 const DateSelect = () => {
   const { selectedStaff } = useBookingLogic();
@@ -48,6 +49,7 @@ const DateSelect = () => {
         <div></div>
       )}
       <SelectTimeAuto startDate={startDate} selectedStaff={selectedStaff} />
+      <StaffTimeAvailable selectedStaff={selectedStaff} />
     </>
   );
 };

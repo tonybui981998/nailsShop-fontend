@@ -25,9 +25,7 @@ const SelectTimeAuto = ({ startDate }) => {
       }
     }
   }, [getFormatStartDate]);
-  console.log("check date", getDateselect);
-  console.log("check form", getFormatStartDate);
-  console.log("check start date", startDate);
+
   return (
     <div className="SelectTimeAuto">
       <div className="line"></div>

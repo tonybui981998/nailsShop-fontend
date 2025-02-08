@@ -13,6 +13,7 @@ const BookingMenu = () => {
   const { openMenu, activeMenu, TotalPrice, handleClickItem, selectItem } =
     useBookingLogic();
   // booking Validation
+  console.log("check select Item ", selectItem);
   const Validation = () => {
     if (selectItem.length === 0) {
       toast.info("Please slect any service to continue");
